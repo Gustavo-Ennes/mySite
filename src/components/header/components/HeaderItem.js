@@ -9,6 +9,11 @@ const StyledGrid = styled(Grid)(() => ({
   }, 0.3)`,
 }));
 
+const StyledButton = styled(Button)(() => ({
+  height: "100%",
+  width: "100%",
+}))
+
 export const HeaderItem = ({ title }) => {
   const { component, setComponent, setOldComponent } = useTransition();
 
@@ -21,7 +26,7 @@ export const HeaderItem = ({ title }) => {
 
   return (
     <StyledGrid item xs>
-      <Button onClick={handleClick}>{title}</Button>
+      <StyledButton onClick={handleClick}>{title}</StyledButton>
     </StyledGrid>
   );
 };
