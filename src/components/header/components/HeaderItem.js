@@ -18,6 +18,12 @@ export const HeaderItem = ({ title }) => {
   const spanId = `span${title}`;
 
   const handleClick = () => {
+    document
+      .getElementById(spanId)
+      ?.classList.remove("animate__animated", "animate__pulse");
+    document
+      .getElementById(spanId)
+      ?.classList.add("animate__animated", "animate__rubberBand");
     if (title !== component) {
       setOldComponent(component);
       setComponent(title);
@@ -25,22 +31,24 @@ export const HeaderItem = ({ title }) => {
   };
 
   const handleMouseEnter = () => {
-    console.log("mouse enters");
+    document
+      .getElementById(spanId)
+      ?.classList.remove("animate__animated", "animate__rubberBand");
     document
       .getElementById(spanId)
       ?.classList.add(
         "animate__animated",
-        "animate__jello",
+        "animate__pulse",
         "animate__duration__200ms"
       );
   };
   const onMouseLeave = () => {
-    console.log("mouse leaves");
     document
       .getElementById(spanId)
       ?.classList.remove(
         "animate__animated",
-        "animate__jello",
+        "animate__pulse",
+        "animate__rubberBand",
         "animate__duration__200ms"
       );
   };
