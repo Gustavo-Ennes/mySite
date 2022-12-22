@@ -1,6 +1,6 @@
 import { Button, Grid, styled } from "@mui/material";
 
-import { useTransition } from "../../../context/TransitionContext";
+import { useMenuAnimationHandlers } from "./useMenuAnimationHandlers";
 
 const StyledGrid = styled(Grid)(() => ({
   height: "calc(100vh / 6)",
@@ -14,51 +14,18 @@ const StyledButton = styled(Button)(() => ({
 }));
 
 export const HeaderItem = ({ title }) => {
-  const { component, setComponent, setOldComponent } = useTransition();
   const spanId = `span${title}`;
-
-  const handleClick = () => {
-    document
-      .getElementById(spanId)
-      ?.classList.remove("animate__animated", "animate__pulse");
-    document
-      .getElementById(spanId)
-      ?.classList.add("animate__animated", "animate__rubberBand");
-    if (title !== component) {
-      setOldComponent(component);
-      setComponent(title);
-    }
-  };
-
-  const handleMouseEnter = () => {
-    document
-      .getElementById(spanId)
-      ?.classList.remove("animate__animated", "animate__rubberBand");
-    document
-      .getElementById(spanId)
-      ?.classList.add(
-        "animate__animated",
-        "animate__pulse",
-        "animate__duration__200ms"
-      );
-  };
-  const onMouseLeave = () => {
-    document
-      .getElementById(spanId)
-      ?.classList.remove(
-        "animate__animated",
-        "animate__pulse",
-        "animate__rubberBand",
-        "animate__duration__200ms"
-      );
-  };
+  const { handleClick, handleMouseEnter, handleMouseLeave } = useMenuAnimationHandlers({
+    title,
+    spanId,
+  });
 
   return (
     <StyledGrid item xs>
       <StyledButton
         onClick={handleClick}
         onMouseEnter={handleMouseEnter}
-        onMouseLeave={onMouseLeave}
+        onMouseLeave={handleMouseLeave}
       >
         <span id={spanId}>{title}</span>
       </StyledButton>
