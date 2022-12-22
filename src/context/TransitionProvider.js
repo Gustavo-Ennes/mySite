@@ -27,11 +27,9 @@ export const TransitionProvider = ({ children }) => {
 
   useEffect(() => {
     const element = document.getElementById(component);
-    console.log("🚀 ~ file: TransitionProvider.js:31 ~ useEffect ~ component", component)
     setTimeout(() => {
       hideAllComponents();
       if (element) {
-        console.log("🚀 ~ file: TransitionProvider.js:34 ~ setTimeout ~ element", element)
         element.classList.remove("animate__animated", "animate__fadeOut");
         element.style.setProperty("display", "block");
         element.classList.add(
