@@ -1,20 +1,21 @@
 import { Grid } from "@mui/material";
 import "animate.css";
-import { useState } from "react";
 
 import "./App.scss";
 import { Header } from "./components/header/Header";
 import { MainFrame } from "./components/mainFrame/MainFrame";
+import { TransitionProvider } from "./context/TransitionProvider";
 
-// TODO remover backgroundColor
 const App = () => {
-  const [component, setComponent] = useState("div1");
-  const items = ["1", "2", "3", "4", "5", "6"];
+  const items = ["home", "about", "resume", "portfolio", "services", "contact"];
+
   return (
-    <Grid container>
-      <Header items={items} setComponent={setComponent}/>
-      <MainFrame component={component} />
-    </Grid>
+    <TransitionProvider>
+      <Grid container>
+        <Header items={items} />
+        <MainFrame />
+      </Grid>
+    </TransitionProvider>
   );
 };
 

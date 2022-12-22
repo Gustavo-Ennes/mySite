@@ -1,6 +1,6 @@
 import { FullHeightMainFrame } from "./FullHeightMainFrame";
 
-export const MainFrame = ({component}) => {
+export const MainFrame = () => {
   return (
     <FullHeightMainFrame
       item
@@ -9,67 +9,73 @@ export const MainFrame = ({component}) => {
       sx={{ backgroundColor: "#919100" }}
     >
       <div
+        id="home"
         style={{
           backgroundColor: "rgba(255,255,255,0.6)",
           height: "100%",
           width: "100%",
           position: "fixed",
-          display: `${component === "div1" ? "block" : "none"}`
+          display: 'none',
         }}
       >
         div1
       </div>
       <div
+        id="about"
         style={{
           backgroundColor: "rgba(255,255,255,0.6)",
           height: "100%",
           width: "100%",
           position: "fixed",
-          display: `${component === "div2" ? "block" : "none"}`
+          display: 'none',
         }}
       >
         div2
       </div>
       <div
+        id="resume"
         style={{
           backgroundColor: "rgba(255,255,255,0.6)",
           height: "100%",
           width: "100%",
           position: "fixed",
-          display: `${component === "div3" ? "block" : "none"}`
+          display: 'none',
         }}
       >
         div3
       </div>
       <div
+        id="portfolio"
         style={{
           backgroundColor: "rgba(255,255,255,0.6)",
           height: "100%",
           width: "100%",
           position: "fixed",
-          display: `${component === "div4" ? "block" : "none"}`
+          display: 'none',
         }}
       >
         div4
       </div>
       <div
+        id="services"
         style={{
           backgroundColor: "rgba(255,255,255,0.6)",
           height: "100%",
           width: "100%",
           position: "fixed",
-          display: `${component === "div5" ? "block" : "none"}`
+          display: 'none',
         }}
       >
         div5
       </div>
       <div
+        id="contact"
         style={{
           backgroundColor: "rgba(255,255,255,0.6)",
           height: "100%",
           width: "100%",
           position: "fixed",
-          display: `${component === "div6" ? "block" : "none"}`
+          display: 'none',
         }}
       >
         div6
