@@ -1,4 +1,10 @@
 import { FullHeightMainFrame } from "./FullHeightMainFrame";
+import { Introduction } from "../../Introduction/Introduction";
+import { About } from "../../about/About";
+import { Resume } from "../../resume/Resume";
+import { Portfolio } from "../../portfolio/Portfolio";
+import { Services } from "../../services/Services";
+import { Contact } from "../../contact/Contact";
 
 export const MainFrame = () => {
   return (
@@ -6,83 +12,26 @@ export const MainFrame = () => {
       item
       xs={12}
       md={11}
-      sx={{ backgroundColor: "#919100" }}
+      sx={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
     >
-      <div
-        id="home"
-        style={{
-          backgroundColor: "rgba(255,255,255,0.6)",
-          height: "100%",
-          width: "100%",
-          position: "fixed",
-          display: 'none',
-        }}
-      >
-        div1
+      <div id="home">
+        <Introduction />
       </div>
-      <div
-        id="about"
-        style={{
-          backgroundColor: "rgba(255,255,255,0.6)",
-          height: "100%",
-          width: "100%",
-          position: "fixed",
-          display: 'none',
-        }}
-      >
-        div2
+      <div id="about">
+        <About />
       </div>
-      <div
-        id="resume"
-        style={{
-          backgroundColor: "rgba(255,255,255,0.6)",
-          height: "100%",
-          width: "100%",
-          position: "fixed",
-          display: 'none',
-        }}
-      >
-        div3
+      <div id="resume">
+        <Resume />
       </div>
-      <div
-        id="portfolio"
-        style={{
-          backgroundColor: "rgba(255,255,255,0.6)",
-          height: "100%",
-          width: "100%",
-          position: "fixed",
-          display: 'none',
-        }}
-      >
-        div4
+      <div id="portfolio">
+        <Portfolio />
       </div>
-      <div
-        id="services"
-        style={{
-          backgroundColor: "rgba(255,255,255,0.6)",
-          height: "100%",
-          width: "100%",
-          position: "fixed",
-          display: 'none',
-        }}
-      >
-        div5
+      <div id="services">
+        <Services />
       </div>
-      <div
-        id="contact"
-        style={{
-          backgroundColor: "rgba(255,255,255,0.6)",
-          height: "100%",
-          width: "100%",
-          position: "fixed",
-          display: 'none',
-        }}
-      >
-        div6
+      <div id="contact">
+        <Contact />
       </div>
     </FullHeightMainFrame>
   );
 };
-
-// TODO exibir os seis componentes do menu, implementá-los cada um em sua pasta, implementar método handle no botão do menu que ao clicar altera a prop display
-// e adiciona uma classe do animate.css
