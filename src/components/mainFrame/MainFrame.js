@@ -1,10 +1,11 @@
-import { FullHeightMainFrame } from "./FullHeightMainFrame";
 import { Introduction } from "../../Introduction/Introduction";
 import { About } from "../../about/About";
 import { Resume } from "../../resume/Resume";
 import { Portfolio } from "../../portfolio/Portfolio";
 import { Services } from "../../services/Services";
 import { Contact } from "../../contact/Contact";
+import { FullHeightMainFrame } from "./FullHeightMainFrame";
+import { FullHeightGrid } from "../FullHeightGrid";
 import { MainFrameContainer } from "./MainFrameContainer";
 import { ThinLayerGrid } from "../ThinLayerGrid";
 
@@ -17,25 +18,25 @@ export const MainFrame = () => {
       sx={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
     >
       <MainFrameContainer disableGutters>
-        <ThinLayerGrid>
-          <div id="home">
+        <ThinLayerGrid container>
+          <FullHeightGrid item id="home" xs={12}>
             <Introduction />
-          </div>
-          <div id="about">
+          </FullHeightGrid>
+          <FullHeightGrid item id="about" xs={12}>
             <About />
-          </div>
-          <div id="resume">
+          </FullHeightGrid>
+          <FullHeightGrid item id="resume" xs={12}>
             <Resume />
-          </div>
-          <div id="portfolio">
+          </FullHeightGrid>
+          <FullHeightGrid item id="portfolio" xs={12}>
             <Portfolio />
-          </div>
-          <div id="services">
+          </FullHeightGrid>
+          <FullHeightGrid item id="services" xs={12}>
             <Services />
-          </div>
-          <div id="contact">
+          </FullHeightGrid>
+          <FullHeightGrid id="contact">
             <Contact />
-          </div>
+          </FullHeightGrid>
         </ThinLayerGrid>
       </MainFrameContainer>
     </FullHeightMainFrame>
