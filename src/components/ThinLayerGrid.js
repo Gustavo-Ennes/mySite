@@ -1,11 +1,8 @@
 import { Grid, styled } from "@mui/material";
 
-export const ThinLayerGrid = styled(Grid, {
-  shouldForwardProp: (prop) => prop !== "color",
-})(({ color }) => ({
-  backgroundColor: `rgba(${color === "blue" ? "160" : "255"}, ${
-    color === "blue" ? "160" : "255"
-  }, 255, 0.75)`,
+export const ThinLayerGrid = styled(Grid)(() => ({
+  backgroundColor: "rgba(255, 255, 255, 0.7)",
   minHeight: "100vh",
+  width: "100%",
   position: "relative",
 }));
