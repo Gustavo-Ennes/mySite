@@ -1,24 +1,28 @@
-import { Box, styled } from "@mui/material";
 import "animate.css";
 
 import "./App.scss";
-import { TransitionProvider } from "./context/TransitionProvider";
-import { ResponsiveAppBar } from './components/AppBar'
-
-const FullHeightBox = styled(Box)(() => ({
-    height: "100vh",
-    backgroundColor: "#333"
-}))
+import { AppBar, FullHeightBox } from "./components";
+import { Introduction } from "./Introduction";
+import { Maintenance } from "./maintenance";
 
 const App = () => {
-  const items = ["home", "about", "resume", "portfolio", "services", "contact"];
-
+  const underMaintenanceMode = process.env.REACT_APP_MAINTENANCE_MODE === 'true';
+  console.log("🚀 ~ file: App.js:10 ~ App ~ process.env.REACT_APP_MAINTENANCE_MODE", process.env.REACT_APP_MAINTENANCE_MODE)
+  console.log(
+    "🚀 ~ file: App.js:10 ~ App ~ underMaintenanceMode",
+    underMaintenanceMode
+  );
   return (
-    <TransitionProvider>
-        <FullHeightBox>
-            <ResponsiveAppBar />
-        </FullHeightBox>
-    </TransitionProvider>
+    <FullHeightBox>
+      {underMaintenanceMode ? (
+        <Maintenance />
+      ) : (
+        <>
+          <AppBar />
+          <Introduction />
+        </>
+      )}
+    </FullHeightBox>
   );
 };
 
