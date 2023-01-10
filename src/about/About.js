@@ -1,20 +1,38 @@
-import { Grid, Typography, styled } from "@mui/material";
-import { FullHeightDesktopGrid } from "../components/FullHeightDesktopGrid";
-import { PhotoContainer } from "./components/PhotoContainer";
-import { TextContainer } from "./components/TextContainer";
+import { Box, Container, Grid, useTheme, useMediaQuery } from "@mui/material";
 
-const StyledTypography = styled(Typography)(() => ({
-  verticalAlign: "middle",
-  padding: "35vh 0 0 0",
-}));
+import { PageGrid } from "../components";
+import gif from "../assets/img/giphy.gif";
+import { Badges, Text } from "./components/";
+import { FlexGrid, Hello, FluidImage } from "./style";
 
-export const About = () => (
-  <Grid container>
-    <FullHeightDesktopGrid item xs={12} md={6}>
-      <PhotoContainer />
-    </FullHeightDesktopGrid>
-    <FullHeightDesktopGrid item xs={12} md={6}>
-      <TextContainer />
-    </FullHeightDesktopGrid>
-  </Grid>
-);
+const About = () => {
+  const { breakpoints } = useTheme();
+  const isMobile = useMediaQuery(breakpoints.up("md"));
+  console.log("isMobile", isMobile);
+  return (
+    <Container maxWidth="xl">
+      <PageGrid container alignItems="center" justifyContent="center">
+        <FlexGrid item xs={12}>
+          <FluidImage src={gif} alt="gif" />
+        </FlexGrid>
+        <Grid item xs={12}>
+          <Hello>Hello</Hello>
+        </Grid>
+        {isMobile && (
+          <Grid item xs={6}>
+            <Box p={6}>
+              <Badges />
+            </Box>
+          </Grid>
+        )}
+        <Grid item xs={12}>
+          <Box p={6}>
+            <Text />
+          </Box>
+        </Grid>
+      </PageGrid>
+    </Container>
+  );
+};
+
+export { About };

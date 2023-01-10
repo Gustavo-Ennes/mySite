@@ -4,14 +4,12 @@ import "./App.scss";
 import { AppBar, FullHeightBox } from "./components";
 import { Introduction } from "./Introduction";
 import { Maintenance } from "./maintenance";
+import { About } from "./about";
 
 const App = () => {
-  const underMaintenanceMode = process.env.REACT_APP_MAINTENANCE_MODE === 'true';
-  console.log("🚀 ~ file: App.js:10 ~ App ~ process.env.REACT_APP_MAINTENANCE_MODE", process.env.REACT_APP_MAINTENANCE_MODE)
-  console.log(
-    "🚀 ~ file: App.js:10 ~ App ~ underMaintenanceMode",
-    underMaintenanceMode
-  );
+  const underMaintenanceMode =
+    process.env.REACT_APP_MAINTENANCE_MODE === "true";
+
   return (
     <FullHeightBox>
       {underMaintenanceMode ? (
@@ -20,6 +18,7 @@ const App = () => {
         <>
           <AppBar />
           <Introduction />
+          <About />
         </>
       )}
     </FullHeightBox>
