@@ -1,6 +1,6 @@
 import { Box, Grid, styled, Typography } from "@mui/material";
 
-import { YELLOW } from "../utils/colors";
+import { YELLOW, DARK_GRAY } from "../utils/colors";
 
 const StyledBox = styled(Box)(() => ({
   height: "100%",
@@ -12,7 +12,7 @@ const StyledBox = styled(Box)(() => ({
 
 const StyledTypography = styled(Typography)(({ theme: { breakpoints } }) => ({
   fontSize: "35px",
-  color: "#333",
+  color: DARK_GRAY,
   textShadow: `3px 3px ${YELLOW}`,
   lineHeight: "1rem",
   [breakpoints.up("md")]: {

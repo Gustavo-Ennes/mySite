@@ -1,8 +1,10 @@
 import { Box, styled } from "@mui/material";
 
+import { DARK_GRAY } from "../utils/colors";
+
 const FullHeightBox = styled(Box)(() => ({
-  height: "100vh",
-  backgroundColor: "#333",
+  minHeight: "100vh",
+  backgroundColor: DARK_GRAY,
 }));
 
-export {FullHeightBox };
+export { FullHeightBox };

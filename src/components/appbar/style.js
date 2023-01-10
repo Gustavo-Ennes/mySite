@@ -9,7 +9,7 @@ import {
   styled,
 } from "@mui/material";
 
-import { YELLOW } from "../../utils/colors";
+import { YELLOW, DARK_GRAY } from "../../utils/colors";
 
 const StyledAvatar = styled(Avatar)(() => ({
   height: "5vh",
@@ -19,7 +19,7 @@ const StyledAvatar = styled(Avatar)(() => ({
 const StyledAppBar = styled(MuiAppBar)(() => ({
   position: "static",
   backgroundColor: YELLOW,
-  color: "#333",
+  color: DARK_GRAY,
   height: "9vh",
 }));
 
@@ -81,7 +81,7 @@ const DesktopBox = styled(MobileBox)(({ theme: { breakpoints } }) => ({
 const MobileButton = styled(Button)(() => ({
   marginTop: 2,
   marginBottom: 2,
-  color: "#333",
+  color: DARK_GRAY,
   display: "block",
 }));
 
