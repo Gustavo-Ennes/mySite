@@ -11,8 +11,8 @@ const TechTypography = styled(Typography)(({ theme: { breakpoints } }) => ({
   lineHeight: "8rem",
   fontFamily: "'Righteous', cursive",
   [breakpoints.down("sm")]: {
-    fontSize: "35px",
-    letterSpacing: "0.8rem",
+    fontSize: "28px",
+    letterSpacing: "0.6rem",
     textShadow: `2px 5px teal`,
     lineHeight: "6rem",
   },
@@ -32,7 +32,7 @@ const NameTypography = styled(Typography)(({ theme: { breakpoints } }) => ({
   fontFamily: "'Shadows Into Light', cursive",
   lineHeight: "1rem",
   [breakpoints.down("sm")]: {
-    fontSize: "40px",
+    fontSize: "35px",
   },
 }));
 
