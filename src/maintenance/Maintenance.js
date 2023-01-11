@@ -1,20 +1,13 @@
-import { Box, Grid, styled, Typography } from "@mui/material";
+import { Grid, styled } from "@mui/material";
 
-import { YELLOW, DARK_GRAY } from "../utils/colors";
+import { YELLOW } from "../utils/colors";
 
-const StyledBox = styled(Box)(() => ({
-  height: "100%",
-  backgroundColor: "#999",
-  padding: "20px",
-  textAlign: "center",
-  top: "50%",
-}));
-
-const StyledTypography = styled(Typography)(({ theme: { breakpoints } }) => ({
+const StyledTypography = styled("p")(({ theme: { breakpoints } }) => ({
   fontSize: "35px",
-  color: DARK_GRAY,
-  textShadow: `3px 3px ${YELLOW}`,
-  lineHeight: "1rem",
+  color: YELLOW,
+  textShadow: `3px 3px teal`,
+  textAlign: "center",
+  height: "100%",
   [breakpoints.up("md")]: {
     fontSize: "55px",
   },
@@ -26,23 +19,24 @@ const StyledTypography = styled(Typography)(({ theme: { breakpoints } }) => ({
   },
 }));
 
-const FullHeightGrid = styled(Grid)(() => ({
-  height: "100%",
+const ContainerGrid = styled(Grid)(() => ({
+  height: "100vh",
 }));
 
 const Maintenance = () => (
-  <FullHeightGrid container alignItems="center" justifyContent="center">
+  <ContainerGrid
+    container
+    justify="center"
+    alignItems="center"
+    style={{ height: "100vh" }}
+  >
     <Grid item xs={12}>
-      <StyledBox>
-        <StyledTypography>
-          <p>
-            <i className="fa-solid fa-triangle-exclamation"></i>
-          </p>
-          <p>under maintenance</p>
-        </StyledTypography>
-      </StyledBox>
+      <StyledTypography>
+        <i className="fa-solid fa-triangle-exclamation animate__animated animate__fadeInDown animate__faster"></i>
+      </StyledTypography>
+      <StyledTypography className="animate__animated animate__fadeInDown ">under maintenance</StyledTypography>
     </Grid>
-  </FullHeightGrid>
+  </ContainerGrid>
 );
 
 export { Maintenance };
