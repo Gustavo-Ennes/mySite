@@ -1,6 +1,6 @@
-import * as React from "react";
+import { useState } from "react";
 
-import { Menu as MenuIcon, } from "@mui/icons-material";
+import { Menu as MenuIcon } from "@mui/icons-material";
 import {
   Toolbar,
   IconButton,
@@ -23,15 +23,14 @@ import {
   DesktopTypography,
   AvatarBox,
   AvatarIconButton,
-} from "./style"
+} from "./style";
 
 import MyImage from "../../assets/img/profile-img.jpg";
-
 
 const pages = ["Home", "About", "Resume", "Portfolio", "Contact"];
 
 function AppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
