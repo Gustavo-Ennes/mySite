@@ -5,6 +5,7 @@ import { AppBar, FullHeightBox } from "./components";
 import { Introduction } from "./Introduction";
 import { Maintenance } from "./maintenance";
 import { About } from "./about";
+import { Resume } from "./resume";
 
 const App = () => {
   const underMaintenanceMode =
@@ -19,6 +20,7 @@ const App = () => {
           <AppBar />
           <Introduction />
           <About />
+          <Resume />
         </>
       )}
     </FullHeightBox>
