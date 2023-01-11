@@ -1,9 +1,8 @@
 import { Container, Grid } from "@mui/material";
 
-import { PageGrid } from "../components";
+import { PageGrid, TitleTypography } from "../components";
 import { Experience } from "./components";
 import { experiencesList } from "./experiencesList";
-import { TitleTypography } from "./style";
 
 const Resume = () => {
   return (
