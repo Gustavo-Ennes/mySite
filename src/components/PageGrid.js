@@ -1,10 +1,8 @@
 import { Grid, styled } from "@mui/material";
 
-import { DARK_GRAY } from "../utils/colors";
-
 const PageGrid = styled(Grid)(() => ({
   minHeight: "91vh",
-  backgroundColor: DARK_GRAY,
+  margin: "5vh 0 20vh 0"
 }));
 
 export { PageGrid };

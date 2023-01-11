@@ -1,0 +1,67 @@
+/* Webkit based browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #333;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: teal;
+}
+
+/* Mozilla based browsers */
+scrollbar {
+  width: 8px;
+  background-color: #333;
+}
+
+scrollbar thumb {
+  border-radius: 10px;
+  background-color: teal;
+}
+
+/* Internet Explorer */
+scrollbar {
+  width: 8px;
+  background-color: #333;
+}
+
+scrollbar thumb {
+  border-radius: 10px;
+  background-color: teal;
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+      width: 8px;
+      background-color: #333;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: #FBD437;
+  }
+
+  /* Mozilla based browsers */
+  scrollbar {
+      width: 8px;
+      background-color: #333;
+  }
+
+  scrollbar thumb {
+      border-radius: 10px;
+      background-color: #FBD437;
+  }
+
+  /* Internet Explorer */
+  scrollbar {
+      width: 8px;
+      background-color: #333;
+  }
+
+  scrollbar thumb {
+      border-radius: 10px;
+      background-color: #FBD437;
+  }
+}
