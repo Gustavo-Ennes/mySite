@@ -1,6 +1,7 @@
 import { Box, Typography, styled } from "@mui/material";
 
 import { YELLOW } from "../utils/colors";
+import { PageGrid } from "../components";
 
 const TechTypography = styled(Typography)(({ theme: { breakpoints } }) => ({
   fontSize: "90px",
@@ -64,13 +65,18 @@ const YellowI = styled("i")(() => ({
   color: YELLOW,
 }));
 
+// just to show all effect at the same time
+const PageGridWithoutMargin =styled(PageGrid)(() => ({
+  margin: 0,
+}))
+
 const animationClass = "animate__animated animate__fadeInDown";
 const animationDelay = "animate__delay-1s";
-const nodeIconClasses = `${animationClass} fa-brands fa-node-js`;
+const nodeIconClasses = `${animationClass} fa-brands fa-node-js animate__faster`;
 const reactIconClasses = `${animationClass} fa-brands fa-react`;
-const apiIconClasses = `${animationClass} fa-solid fa-satellite`;
-const nameIconClasses = `${animationClass} ${animationDelay} fa-solid fa-ghost`;
-const positionIconClasses = `${animationClass} ${animationDelay} fa-solid fa-hat-wizard`;
+const apiIconClasses = `${animationClass} fa-solid fa-satellite animate__slower`;
+const nameIconClasses = `${animationClass} ${animationDelay} fa-solid fa-ghost animate__faster`;
+const positionIconClasses = `${animationClass} ${animationDelay} fa-solid fa-hat-wizard animate__slower`;
 
 export {
   animationClass,
@@ -86,4 +92,5 @@ export {
   StyledBox,
   WhiteI,
   YellowI,
+  PageGridWithoutMargin,
 };
