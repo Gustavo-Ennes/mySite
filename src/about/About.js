@@ -8,7 +8,7 @@ import { FlexGrid, Hello, FluidImage } from "./style";
 const About = () => {
   const { breakpoints } = useTheme();
   const isMobile = useMediaQuery(breakpoints.up("md"));
-  console.log("isMobile", isMobile);
+  
   return (
     <Container maxWidth="xl">
       <PageGrid container alignItems="center" justifyContent="center">
