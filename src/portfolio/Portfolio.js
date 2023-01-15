@@ -16,7 +16,7 @@ const Portfolio = () => {
 
   return (
     <Container maxWidth="xl">
-      <PageGrid container>
+      <PageGrid container alignContent="baseline" justifyItems="stretch">
         <Grid item xs={12}>
           <TitleTypography variant="h2">Portfolio</TitleTypography>
         </Grid>
@@ -28,7 +28,10 @@ const Portfolio = () => {
             centered
           >
             {projectList.map(({ title }, index) => (
-              <Tab key={index} label={title} />
+              <Tab
+                key={index}
+                label={title}
+              />
             ))}
           </StyledTabs>
         </Grid>

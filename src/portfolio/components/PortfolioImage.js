@@ -11,7 +11,13 @@ const PortfolioImages = ({ tabValue }) => (
     {Object.values(projectList)
       .filter((_, index) => index === tabValue)
       .map(({ images, title }) => (
-        <Grid container justifyContent="center" alignItems="center" key={title}>
+        <Grid
+          container
+          justifyContent="center"
+          alignItems="center"
+          key={title}
+          className="animate__animated animate__fadeInUp"
+        >
           {images.map((image) => (
             <Grid
               item
@@ -20,9 +26,9 @@ const PortfolioImages = ({ tabValue }) => (
               lg={3}
               key={`${title}${images.indexOf(image)}`}
             >
-              <ProjectCard>
+              <ProjectCard className="animate__animated animate__zoomInDown animate__duration__faster">
                 <Zoom>
-                  <ProjectCardMedia image={image} title={"asd"} />
+                  <ProjectCardMedia image={image} title={title} />
                 </Zoom>
               </ProjectCard>
             </Grid>
