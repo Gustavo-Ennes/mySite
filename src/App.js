@@ -2,11 +2,7 @@ import "animate.css";
 
 import "./App.scss";
 import { AppBar, FullHeightBox } from "./components";
-import { Introduction } from "./Introduction";
-import { Maintenance } from "./maintenance";
-import { About } from "./about";
-import { Resume } from "./resume";
-import { Portfolio } from "./portfolio/Portfolio";
+import { Introduction, Maintenance, About, Resume, Portfolio } from "./routes";
 
 const App = () => {
   const underMaintenanceMode =

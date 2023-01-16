@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Container, Grid, Tab } from "@mui/material";
 
 import { projectList } from "./projectList";
-import { PageGrid, TitleTypography } from "../components";
+import { PageGrid, TitleTypography } from "../../components";
 import { PortfolioImages } from "./components";
 import { StyledTabs } from "./style";
 

@@ -1,6 +1,6 @@
 import { Grid, Typography, styled } from "@mui/material";
 
-import { YELLOW } from "../utils/colors";
+import { YELLOW } from "../../utils/colors";
 
 const FlexGrid = styled(Grid)(() => ({
   display: "flex",

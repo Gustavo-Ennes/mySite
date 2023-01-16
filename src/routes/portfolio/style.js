@@ -1,6 +1,6 @@
 import { Tabs, Card, CardMedia, styled } from "@mui/material";
 
-import { YELLOW } from "../utils/colors";
+import { YELLOW } from "../../utils/colors";
 
 const StyledTabs = styled(Tabs)(() => ({
   margin: "30px 0",

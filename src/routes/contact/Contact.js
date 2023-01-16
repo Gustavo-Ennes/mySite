@@ -5,8 +5,10 @@ const StyledTypography = styled(Typography)(() => ({
   padding: "35vh 0 0 0",
 }));
 
-export const Services = () => (
+const Contact = () => (
   <Grid container>
     <Grid item>asd</Grid>
   </Grid>
 );
+
+export { Contact }

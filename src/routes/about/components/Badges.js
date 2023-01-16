@@ -1,7 +1,7 @@
 import { Box, Chip, Grid, styled } from "@mui/material";
 import DoneIcon from "@mui/icons-material/Done";
 
-import { YELLOW } from "../../utils/colors";
+import { YELLOW } from "../../../utils/colors";
 import { badgesList } from "./bagesList";
 
 const StyledChip = styled(Chip)(() => ({

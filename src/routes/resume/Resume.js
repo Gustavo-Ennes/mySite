@@ -1,6 +1,6 @@
 import { Container, Grid } from "@mui/material";
 
-import { PageGrid, TitleTypography } from "../components";
+import { PageGrid, TitleTypography } from "../../components";
 import { Experience } from "./components";
 import { experiencesList } from "./experiencesList";
 

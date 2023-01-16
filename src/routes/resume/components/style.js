@@ -6,7 +6,7 @@ import {
   Typography,
   styled,
 } from "@mui/material";
-import { DARK_GRAY, YELLOW } from "../../utils/colors";
+import { DARK_GRAY, YELLOW } from "../../../utils/colors";
 
 const StyledCard = styled(Card)(() => ({
   background: DARK_GRAY,

@@ -1,7 +1,7 @@
 import { Box, Container, Grid, useTheme, useMediaQuery } from "@mui/material";
 
-import { PageGrid } from "../components";
-import gif from "../assets/img/giphy.gif";
+import { PageGrid } from "../../components";
+import gif from "../../assets/img/giphy.gif";
 import { Badges, Text } from "./components/";
 import { FlexGrid, Hello, FluidImage } from "./style";
 

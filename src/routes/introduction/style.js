@@ -1,7 +1,7 @@
 import { Box, Typography, styled } from "@mui/material";
 
-import { YELLOW } from "../utils/colors";
-import { PageGrid } from "../components";
+import { YELLOW } from "../../utils/colors";
+import { PageGrid } from "../../components";
 
 const TechTypography = styled(Typography)(({ theme: { breakpoints } }) => ({
   fontSize: "90px",
