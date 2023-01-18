@@ -2,7 +2,14 @@ import "animate.css";
 
 import "./App.scss";
 import { AppBar, FullHeightBox } from "./components";
-import { Introduction, Maintenance, About, Resume, Portfolio } from "./routes";
+import {
+  Introduction,
+  Maintenance,
+  About,
+  Resume,
+  Portfolio,
+  Contact,
+} from "./routes";
 
 const App = () => {
   const underMaintenanceMode =
@@ -19,6 +26,7 @@ const App = () => {
           <About />
           <Resume />
           <Portfolio />
+          <Contact />
         </>
       )}
     </FullHeightBox>

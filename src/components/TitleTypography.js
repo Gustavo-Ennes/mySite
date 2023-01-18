@@ -4,6 +4,7 @@ import { YELLOW } from "../utils/colors";
 
 const TitleTypography = styled(Typography)(({ theme: { breakpoints } }) => ({
   fontSize: "100px",
+  paddingBottom: "50px",
   color: YELLOW,
   textShadow: "3px 3px teal",
   fontFamily: "'Righteous', cursive",

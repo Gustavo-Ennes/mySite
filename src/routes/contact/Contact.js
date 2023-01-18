@@ -1,14 +1,14 @@
-import { Grid, Typography, styled } from "@mui/material";
+import { Container } from "@mui/material";
 
-const StyledTypography = styled(Typography)(() => ({
-  verticalAlign: "middle",
-  padding: "35vh 0 0 0",
-}));
+import { PaddingGrid } from "./style";
+import { ContactForm } from "./components";
 
 const Contact = () => (
-  <Grid container>
-    <Grid item>asd</Grid>
-  </Grid>
+  <Container maxWidth="xl">
+    <PaddingGrid container alignItems="center" justifyContent="center">
+      <ContactForm />
+    </PaddingGrid>
+  </Container>
 );
 
-export { Contact }
+export { Contact };
