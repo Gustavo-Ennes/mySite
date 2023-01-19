@@ -1,14 +1,17 @@
 import axios from "axios";
 
-const sendEmail = async ({ name, email, message }) => {
+const triggerEmailCloudFunction = async ({ name, email, message }) => {
   try {
     const res = await axios({
-      url: "https://southamerica-east1-mysite-374312.cloudfunctions.net/sendPortfolioMessage",
+      url: process.env.REACT_APP_SEND_EMAIL_URL,
       method: "POST",
       data: {
         name,
         email,
         message,
+      },
+      headers: {
+        "Content-Type": "application/json",
       },
     });
 
@@ -18,4 +21,4 @@ const sendEmail = async ({ name, email, message }) => {
   }
 };
 
-export { sendEmail };
+export { triggerEmailCloudFunction };
