@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Menu as MenuIcon } from "@mui/icons-material";
 import {
@@ -10,6 +10,7 @@ import {
   MenuItem,
 } from "@mui/material";
 
+import { SmoothScrollingLink } from ".";
 import {
   desktopIconClass,
   StyledAppBar,
@@ -88,7 +89,7 @@ function AppBar() {
           <MobileBox>
             {pages.map((page) => (
               <MobileButton key={page} onClick={handleCloseNavMenu}>
-                {page}
+                <SmoothScrollingLink page={page} to={page.toLowerCase()} />
               </MobileButton>
             ))}
           </MobileBox>

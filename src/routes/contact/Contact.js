@@ -4,7 +4,7 @@ import { PaddingGrid } from "./style";
 import { ContactForm } from "./components";
 
 const Contact = () => (
-  <Container maxWidth="xl">
+  <Container maxWidth="xl" id="contact">
     <PaddingGrid container alignItems="center" justifyContent="center">
       <ContactForm />
     </PaddingGrid>

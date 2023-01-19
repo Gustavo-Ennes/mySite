@@ -1,4 +1,4 @@
-import { Box, Typography, styled } from "@mui/material";
+import { Box, Container, Typography, styled } from "@mui/material";
 
 import { YELLOW } from "../../utils/colors";
 import { PageGrid } from "../../components";
@@ -66,9 +66,13 @@ const YellowI = styled("i")(() => ({
 }));
 
 // just to show all effect at the same time
-const PageGridWithoutMargin =styled(PageGrid)(() => ({
+const PageGridWithoutMargin = styled(PageGrid)(() => ({
   margin: 0,
-}))
+}));
+    
+const ContainerMaxHeight = styled(Container)(() => ({
+  maxHeight: "100vh",
+}));
 
 const animationClass = "animate__animated animate__fadeInDown";
 const animationDelay = "animate__delay-1s";
@@ -81,6 +85,7 @@ const positionIconClasses = `${animationClass} ${animationDelay} fa-solid fa-hat
 export {
   animationClass,
   animationDelay,
+  ContainerMaxHeight,
   nameIconClasses,
   positionIconClasses,
   apiIconClasses,

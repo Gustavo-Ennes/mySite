@@ -6,7 +6,7 @@ import { experiencesList } from "./experiencesList";
 
 const Resume = () => {
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xl" id="resume">
       <PageGrid container alignItems="stretch" justifyContent="center">
         <Grid item xs={12}>
           <TitleTypography>Resume</TitleTypography>

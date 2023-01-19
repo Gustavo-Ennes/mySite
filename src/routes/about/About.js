@@ -10,7 +10,7 @@ const About = () => {
   const isMobile = useMediaQuery(breakpoints.up("md"));
   
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xl" id="about">
       <PageGrid container alignItems="center" justifyContent="center">
         <FlexGrid item xs={12}>
           <FluidImage src={gif} alt="gif" />
