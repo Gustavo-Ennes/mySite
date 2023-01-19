@@ -1,10 +1,10 @@
-import { Container, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import { TechBox, NameBox } from "./components";
-import { PageGridWithoutMargin } from "./style";
+import { PageGridWithoutMargin, ContainerMaxHeight } from "./style";
 
 export const Introduction = () => (
-  <Container maxWidth="xl" sx={{ maxHeight: "100vh" }}>
-    <PageGridWithoutMargin container sx={{ margin: 0 }}>
+  <ContainerMaxHeight maxWidth="xl" id="home">
+    <PageGridWithoutMargin container>
       <Grid item xs={12} md={6} lg={8}>
         <TechBox />
       </Grid>
@@ -12,5 +12,5 @@ export const Introduction = () => (
         <NameBox />
       </Grid>
     </PageGridWithoutMargin>
-  </Container>
+  </ContainerMaxHeight>
 );

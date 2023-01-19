@@ -15,7 +15,7 @@ const Portfolio = () => {
   };
 
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xl" id='portfolio'>
       <PageGrid container alignContent="baseline" justifyItems="stretch">
         <Grid item xs={12}>
           <TitleTypography variant="h2">Portfolio</TitleTypography>
