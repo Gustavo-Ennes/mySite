@@ -1,6 +1,6 @@
 import { Link } from "react-scroll";
 
-const SmoothScrollingLink = ({ page, to }) => (
+const SmoothScrollingLink = ({ page, to, afterFunction }) => (
   <Link
     activeClass="active"
     to={to}
@@ -8,6 +8,7 @@ const SmoothScrollingLink = ({ page, to }) => (
     smooth={true}
     offset={-30}
     duration={750}
+    onSetActive={afterFunction}
   >
     {page}
   </Link>

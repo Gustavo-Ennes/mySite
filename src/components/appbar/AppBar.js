@@ -24,25 +24,35 @@ import {
   DesktopTypography,
   AvatarBox,
   AvatarIconButton,
+  StyledAvatarMenu,
+  StyledLink,
 } from "./style";
+import { 
+  sectionLinks,
+  contactLinks
+} from './links'
 
 import MyImage from "../../assets/img/profile-img.jpg";
 
-const pages = ["Home", "About", "Resume", "Portfolio", "Contact"];
-
 function AppBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
 
   return (
-    <StyledAppBar>
+    <StyledAppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <DesktopIcon className={desktopIconClass} />
@@ -73,12 +83,15 @@ function AppBar() {
                 vertical: "top",
                 horizontal: "left",
               }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
+              open={!!anchorElNav}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {sectionLinks.map((section) => (
+                <MenuItem key={section} onClick={handleCloseNavMenu}>
+                  <SmoothScrollingLink
+                    page={section}
+                    to={section.toLowerCase()}
+                    afterFunction={handleCloseNavMenu}
+                  />
                 </MenuItem>
               ))}
             </DesktopMenu>
@@ -87,19 +100,48 @@ function AppBar() {
             ENNES
           </MobileTypography>
           <MobileBox>
-            {pages.map((page) => (
-              <MobileButton key={page} onClick={handleCloseNavMenu}>
-                <SmoothScrollingLink page={page} to={page.toLowerCase()} />
+            {sectionLinks.map((section) => (
+              <MobileButton key={section}>
+                <SmoothScrollingLink
+                  page={section}
+                  to={section.toLowerCase()}
+                  onClick={handleCloseNavMenu}
+                />
               </MobileButton>
             ))}
           </MobileBox>
 
           <AvatarBox>
-            <Tooltip title="Open settings">
-              <AvatarIconButton>
-                <StyledAvatar alt="Remy Sharp" src={MyImage} sizes="" />
+            <Tooltip title="Contacts">
+              <AvatarIconButton onClick={handleOpenUserMenu}>
+                <StyledAvatar alt="Gustavo Ennes" src={MyImage} />
               </AvatarIconButton>
             </Tooltip>
+            <StyledAvatarMenu
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              {contactLinks.map(({ name, url }) => (
+                <MenuItem key={url} onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">
+                    <StyledLink href={url} target="_blank">
+                      {name}
+                    </StyledLink>
+                  </Typography>
+                </MenuItem>
+              ))}
+            </StyledAvatarMenu>
           </AvatarBox>
         </Toolbar>
       </Container>
