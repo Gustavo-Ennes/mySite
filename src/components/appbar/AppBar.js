@@ -106,4 +106,7 @@ function AppBar() {
     </StyledAppBar>
   );
 }
+
 export { AppBar };
+
+// TODO fix mobile

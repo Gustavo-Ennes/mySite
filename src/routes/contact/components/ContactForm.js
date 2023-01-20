@@ -2,9 +2,10 @@ import { useEffect, useState, useContext } from "react";
 
 import { Grid } from "@mui/material";
 
-import { TitleTypography } from "../../../components";
+import { TitleTypography, ErrorSnackbar } from "../../../components";
 import { LoadingContext } from "../../../context/loading/context";
 import { triggerEmailCloudFunction } from "../../../service/email";
+import { formSchema } from ".";
 
 import {
   StyledTextArea,
@@ -19,20 +20,28 @@ const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [messageSent, setMessageSent] = useState(false);
+  const [error, setError] = useState(undefined);
   const { setIsLoading } = useContext(LoadingContext);
   const notSentSubtitle = "C'mon, don't be shy!";
   const sentSubtitle = "Thank you for your message!";
 
   const sendEmail = async () => {
-    if (!messageSent) {
-      try {
-        setIsLoading(true)
+    try {
+      const isFormValid = formSchema.validateSync({
+        name,
+        email,
+        message,
+      });
+
+      if (!messageSent && isFormValid) {
+        setIsLoading(true);
         setMessageSent(true);
         await triggerEmailCloudFunction({ message, name, email });
-        setIsLoading(false)
-      } catch (error) {
-        console.log(error);
+        setIsLoading(false);
       }
+    } catch (error) {
+      console.log(error);
+      setError(error.message);
     }
   };
 
@@ -61,6 +70,7 @@ const ContactForm = () => {
 
   return (
     <>
+      <ErrorSnackbar error={error} setError={setError} />
       <Grid item xs={12}>
         <TitleTypography variant="h2">Contact</TitleTypography>
       </Grid>
