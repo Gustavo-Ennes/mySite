@@ -5,7 +5,7 @@ import { Grid } from "@mui/material";
 import { TitleTypography, ErrorSnackbar } from "../../../components";
 import { LoadingContext } from "../../../context/loading/context";
 import { triggerEmailCloudFunction } from "../../../service/email";
-import { formSchema } from ".";
+import { formSchema } from "./formSchema";
 
 import {
   StyledTextArea,
@@ -63,7 +63,7 @@ const ContactForm = () => {
       element.classList.add(
         "animate__animated",
         "animate__rubberBand",
-        "animate__duration__slow"
+        "animate__duration__slow",
       );
     }
   }, [messageSent]);

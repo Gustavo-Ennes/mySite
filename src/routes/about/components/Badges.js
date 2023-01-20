@@ -19,14 +19,9 @@ const CentralizedBox = styled(Box)(() => ({
 }));
 
 const Badges = () => (
-  <Grid
-    container
-    spacing={1}
-    justifyContent="center"
-    alignItems="center"
-  >
+  <Grid container spacing={1} justifyContent="center" alignItems="center">
     {badgesList.map((badge) => (
-      <Grid item xs>
+      <Grid item xs key={badge}>
         <CentralizedBox>
           <StyledChip
             label={badge}

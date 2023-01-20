@@ -7,6 +7,7 @@ import {
   Avatar,
   Button,
   styled,
+  Link,
 } from "@mui/material";
 
 import { YELLOW, DARK_GRAY } from "../../utils/colors";
@@ -28,7 +29,8 @@ const DesktopIcon = styled("i")(({ theme: { breakpoints } }) => ({
   [breakpoints.up("md")]: {
     display: "flex",
   },
-  marginRight: 1,
+  marginRight: 10,
+  color: "teal"
 }));
 
 const DesktopTypography = styled(Typography)(({ theme: { breakpoints } }) => ({
@@ -56,11 +58,19 @@ const MobileTypography = styled(DesktopTypography)(
 );
 
 const DesktopMenu = styled(Menu)(({ theme: { breakpoints } }) => ({
-  display: "none",
+  display: "block",
   [breakpoints.up("md")]: {
-    display: "flex",
+    display: "none",
   },
   fontFamily: "'Shadows Into Light', cursive",
+  "& .MuiPaper-root": {
+    backgroundColor: "teal",
+    color: YELLOW,
+  },
+  "& .MuiMenuItem-root:hover": {
+    backgroundColor: "rgba(255, 255, 255, 0.6)",
+    color: "teal",
+  },
 }));
 
 const MobileBox = styled(Box)(({ theme: { breakpoints } }) => ({
@@ -93,7 +103,25 @@ const AvatarIconButton = styled(IconButton)(() => ({
   padding: 0,
 }));
 
-const desktopIconClass = "fa-brands fa-connectdevelop";
+const StyledAvatarMenu = styled(Menu)(() => ({
+  marginTop: "45px",
+  fontFamily: "'Shadows Into Light', cursive",
+  "& .MuiPaper-root": {
+    backgroundColor: "teal",
+    color: YELLOW,
+  },
+  "& .MuiMenuItem-root:hover": {
+    backgroundColor: "rgba(255, 255, 255, 0.6)",
+    color: "teal",
+  },
+}));
+
+const StyledLink = styled(Link)(() => ({
+  textDecoration: "none",
+  color: YELLOW,
+}));
+
+const desktopIconClass = "fa-solid fa-hat-wizard";
 
 export {
   desktopIconClass,
@@ -108,4 +136,6 @@ export {
   DesktopTypography,
   AvatarBox,
   AvatarIconButton,
+  StyledAvatarMenu,
+  StyledLink,
 };
