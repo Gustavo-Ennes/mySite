@@ -1,4 +1,4 @@
-import { Box, Container, Typography, styled } from "@mui/material";
+import { Box, Container, Typography, styled, Link } from "@mui/material";
 
 import { YELLOW } from "../../utils/colors";
 import { PageGrid } from "../../components";
@@ -37,6 +37,18 @@ const NameTypography = styled(Typography)(({ theme: { breakpoints } }) => ({
   },
 }));
 
+const IconTypography = styled(Typography)(({ theme: { breakpoints } }) => ({
+  verticalAlign: "text-bottom",
+  fontSize: "22px",
+  color: "#ddd",
+  textShadow: `2px 2px teal`,
+  paddingRight: "20px",
+  fontFamily: "'Space Mono', monospace",
+  [breakpoints.down("sm")]: {
+    fontSize: "25px",
+  },
+}));
+
 const PositionTypography = styled(Typography)(({ theme: { breakpoints } }) => ({
   verticalAlign: "text-bottom",
   fontSize: "32px",
@@ -57,6 +69,18 @@ const StyledBox = styled(Box)(() => ({
   textAlign: "right",
 }));
 
+const StyledLink = styled(Link)(() => ({
+  textDecoration: "none",
+}));
+
+const WhiteIcon = styled("i")(({ theme: { breakpoints } }) => ({
+  color: "white",
+  padding: "10px 25px 0px 12px ",
+  [breakpoints.down("sm")]: {
+    padding: "10px 12px 0px 12px  ",
+  },
+}));
+
 const WhiteI = styled("i")(() => ({
   color: "white",
 }));
@@ -69,7 +93,7 @@ const YellowI = styled("i")(() => ({
 const PageGridWithoutMargin = styled(PageGrid)(() => ({
   margin: 0,
 }));
-    
+
 const ContainerMaxHeight = styled(Container)(() => ({
   maxHeight: "100vh",
 }));
@@ -98,4 +122,7 @@ export {
   WhiteI,
   YellowI,
   PageGridWithoutMargin,
+  IconTypography,
+  WhiteIcon,
+  StyledLink,
 };

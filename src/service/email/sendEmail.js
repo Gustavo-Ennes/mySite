@@ -2,7 +2,7 @@ import axios from "axios";
 
 const triggerEmailCloudFunction = async ({ name, email, message }) => {
   try {
-    const res = await axios({
+    await axios({
       url: process.env.REACT_APP_SEND_EMAIL_URL,
       method: "POST",
       data: {
@@ -14,8 +14,6 @@ const triggerEmailCloudFunction = async ({ name, email, message }) => {
         "Content-Type": "application/json",
       },
     });
-
-    console.log(res);
   } catch (error) {
     console.log(error);
   }
