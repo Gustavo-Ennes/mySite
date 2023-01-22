@@ -1,2 +1,2 @@
 export { AppBar } from "./AppBar";
-export { SmoothScrollingLink } from "./SmoothScrollingLink";
+export { SmoothScrollingLink } from "./components/SmoothScrollingLink";

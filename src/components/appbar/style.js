@@ -30,7 +30,7 @@ const DesktopIcon = styled("i")(({ theme: { breakpoints } }) => ({
     display: "flex",
   },
   marginRight: 10,
-  color: "teal"
+  color: "teal",
 }));
 
 const DesktopTypography = styled(Typography)(({ theme: { breakpoints } }) => ({
@@ -121,6 +121,11 @@ const StyledLink = styled(Link)(() => ({
   color: YELLOW,
 }));
 
+const StyledMenuIcon = styled("i")(() => ({
+  color: "white",
+  marginRight: "10px",
+}));
+
 const desktopIconClass = "fa-solid fa-hat-wizard";
 
 export {
@@ -137,5 +142,6 @@ export {
   AvatarBox,
   AvatarIconButton,
   StyledAvatarMenu,
+  StyledMenuIcon,
   StyledLink,
 };
